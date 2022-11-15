@@ -1,0 +1,21 @@
+{
+  "name": "pokeapifun",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "concurrently \"cd backend && python manage.py runserver\" \"cd frontend && npm start\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sghendryx/pokeAPIfun.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sghendryx/pokeAPIfun/issues"
+  },
+  "homepage": "https://github.com/sghendryx/pokeAPIfun#readme",
+  "dependencies": {
+    "concurrently": "^7.5.0"
+  }
+}

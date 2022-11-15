@@ -35,11 +35,10 @@ for location in location_names:
     response = requests.get("https://pokeapi.co/api/v2/location/{location}/")
     location_details = response.json()
     game_indices = location_details['game_indices']
-        for g in game_indices:
-            generation.append(g['generation']['name'])
+    for g in game_indices:
+        generation_one_locations.append(g['generation']['name'])
 
 print(generation_one_locations)
-
 
 # location_names = locations['areas']['name']
 # print(location_names)
