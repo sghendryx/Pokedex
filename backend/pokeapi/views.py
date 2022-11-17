@@ -1,6 +1,7 @@
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
-from . import pokeapi
+from pokeapi import pokeapi
+
 
 @api_view(['GET'])
 def get_pokemon(request):

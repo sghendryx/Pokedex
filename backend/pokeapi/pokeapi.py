@@ -1,6 +1,11 @@
 import requests
 
 
+# This initializes the database with the location data to use to speed up other interactions with the pokemon API
+def initialize_database():
+    print('todo')
+
+
 # This is where we will place all the logic to retrieve the data we need from the pokemon API and format it to a form
 # that will be useful to see in the UI.
 def get_pokemon():
