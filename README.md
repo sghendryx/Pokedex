@@ -2,8 +2,9 @@
 
 Here are the frameworks used to bootstrap this project
 
-* [![React][React.js]][React-url]
-* [![Django][Django]][Django-url]
+* [![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/docs/getting-started.html)
+* [![Material-UI](https://img.shields.io/badge/Material--UI-0081CB?style=for-the-badge&logo=material-ui&logoColor=white)](https://mui.com/material-ui/react-button/)
+* [![Django](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white)](https://docs.djangoproject.com/en/4.1/intro/overview/)
 
 <!-- GETTING STARTED -->
 
