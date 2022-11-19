@@ -1,4 +1,5 @@
 import requests
+from pokeapi.models import Region, Location, Area
 
 
 # This is where we will place all the logic to retrieve the data we need from the pokemon API and format it to a form
@@ -15,3 +16,7 @@ def get_pokemon():
         hydrated_pokemon.append({'name': p['name'], 'sprite': sprite})
 
     return {'pokemon': hydrated_pokemon}
+
+
+def test():
+    print("testing ground")

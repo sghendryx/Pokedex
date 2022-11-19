@@ -6,3 +6,8 @@ from pokeapi import pokeapi
 @api_view(['GET'])
 def get_pokemon(request):
     return Response(pokeapi.get_pokemon())
+
+
+@api_view(['GET'])
+def test(request):
+    return Response(pokeapi.test())
