@@ -20,5 +20,6 @@ from pokeapi import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('pokemon/', views.get_pokemon),
-    path('test/', views.test)
+    path('test/', views.test),
+    path('regions/', views.regions)
 ]

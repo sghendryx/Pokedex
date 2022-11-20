@@ -1,10 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
-import Dashboard from './components/Dashboard'
+import logo from "./logo.svg";
+import "./App.css";
+import Dashboard from "./components/Dashboard";
+import { QueryClient, QueryClientProvider } from "react-query";
+
+const queryClient = new QueryClient();
 
 function App() {
   return (
-    <Dashboard></Dashboard>
+    <QueryClientProvider client={queryClient}>
+      <Dashboard />
+    </QueryClientProvider>
   );
 }
 

@@ -14,7 +14,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import * as React from "react";
 import { mainListItems, secondaryListItems } from "./listItems";
-import Pokemon from "./Pokemon";
+import Regions from "./Regions";
 
 function Copyright(props) {
   return (
@@ -121,7 +121,7 @@ function DashboardContent() {
               noWrap
               sx={{ flexGrow: 1 }}
             >
-              Pokemon (TBD)
+              Pokedex
             </Typography>
           </Toolbar>
         </AppBar>
@@ -159,7 +159,7 @@ function DashboardContent() {
         >
           <Toolbar />
           <Container maxWidth={false} sx={{ mt: 4, mb: 4 }}>
-            <Pokemon />
+            <Regions />
           </Container>
         </Box>
       </Box>
