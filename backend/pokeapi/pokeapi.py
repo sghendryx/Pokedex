@@ -5,7 +5,7 @@ from pokeapi.models import Region, Location, Area
 # This is where we will place all the logic to retrieve the data we need from the pokemon API and format it to a form
 # that will be useful to see in the UI.
 
-#Adds Pokemon you encounter's URLs in a location_area to the empty array pokemon_urls 
+# Adds Pokemon you encounter's URLs in a location_area to the empty array pokemon_urls 
 def pokemon_route_encounters():
     response = requests.get("https://pokeapi.co/api/v2/location-area/kanto-route-28-area/")
     area = response.json()
@@ -18,7 +18,7 @@ def pokemon_route_encounters():
     return pokemon_names
 
 
-#Gets a pokemon's name and its sprite from the pokemons in the specified location area.
+# Gets a Pokemon's name, its sprite, and its types from the Pokemons in the specified location area.
 def get_pokemon():
     pokemon_names = pokemon_route_encounters()
     hydrated_pokemon = [] 
