@@ -12,7 +12,7 @@ export const mainListItems = (
       <ListItemIcon>
         <CatchingPokemonIcon />
       </ListItemIcon>
-      <ListItemText primary="Pokemon" />
+      <ListItemText primary="Pokedex" />
     </ListItemButton>
   </React.Fragment>
 );
@@ -20,13 +20,13 @@ export const mainListItems = (
 export const secondaryListItems = (
   <React.Fragment>
     <ListSubheader component="div" inset>
-      Secondary buttons
+      Set Team
     </ListSubheader>
     <ListItemButton>
       <ListItemIcon>
         <AssignmentIcon />
       </ListItemIcon>
-      <ListItemText primary="Something" />
+      <ListItemText primary="team name" />
     </ListItemButton>
   </React.Fragment>
 );

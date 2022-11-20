@@ -18,5 +18,14 @@ def get_pokemon():
     return {'pokemon': hydrated_pokemon}
 
 
+def get_regions():
+    regions = Region.objects.all()
+    response = {'regions': []}
+    for r in regions:
+        response['regions'].append({'name': r.name, 'poke_id': r.poke_id})
+
+    return response
+
+
 def test():
     print("testing ground")

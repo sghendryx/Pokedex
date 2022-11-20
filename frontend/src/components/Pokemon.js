@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import Card from "@mui/material/Card";
 import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
@@ -7,29 +6,14 @@ import CircularProgress from "@mui/material/CircularProgress";
 import Typography from "@mui/material/Typography";
 import Alert from "@mui/material/Alert";
 import AlertTitle from "@mui/material/AlertTitle";
+import { useQuery } from "react-query";
 
 export default function Pokemon() {
-  // TODO: make a fetch hook that cleans up this nonsense, why didn't react do that yet?
-  const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const { isLoading, error, data } = useQuery("getPokemon", () =>
+    fetch("http://127.0.0.1:8000/pokemon/").then((res) => res.json())
+  );
 
-  useEffect(() => {
-    fetch(` http://127.0.0.1:8000/pokemon/`)
-      .then((response) => response.json())
-      .then((usefulData) => {
-        console.log(usefulData);
-        setLoading(false);
-        setData(usefulData);
-      })
-      .catch((e) => {
-        console.error(`An error occurred: ${e}`);
-        setLoading(false);
-        setError(e.message);
-      });
-  }, []);
-
-  if (loading) {
+  if (isLoading) {
     return <CircularProgress />;
   }
   if (error) {
@@ -40,7 +24,6 @@ export default function Pokemon() {
       </Alert>
     );
   }
-  console.log(data);
   return (
     <Grid container rowSpacing={2} columnSpacing={2}>
       {data.pokemon.map((p) => (
