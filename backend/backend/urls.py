@@ -21,5 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('pokemon/', views.get_pokemon),
     path('test/', views.test),
-    path('regions/', views.regions)
+    path('regions/', views.regions),
+    path('locations/<int:region_poke_id>/', views.locations)
 ]

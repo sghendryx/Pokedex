@@ -14,7 +14,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import * as React from "react";
 import { mainListItems, secondaryListItems } from "./listItems";
-import Regions from "./Regions";
+import Router from "./Router";
 
 function Copyright(props) {
   return (
@@ -159,7 +159,7 @@ function DashboardContent() {
         >
           <Toolbar />
           <Container maxWidth={false} sx={{ mt: 4, mb: 4 }}>
-            <Regions />
+            <Router />
           </Container>
         </Box>
       </Box>

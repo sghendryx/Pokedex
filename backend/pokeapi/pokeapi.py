@@ -21,7 +21,7 @@ def pokemon_route_encounters():
 # Gets a Pokemon's name, its sprite, and its types from the Pokemons in the specified location area.
 def get_pokemon():
     pokemon_names = pokemon_route_encounters()
-    hydrated_pokemon = [] 
+    hydrated_pokemon = []
     for name in pokemon_names:
         response = requests.get(f'https://pokeapi.co/api/v2/pokemon/{name}')
         hydration_json = response.json()
@@ -37,10 +37,18 @@ def get_regions():
     response = {'regions': []}
     for r in regions:
         response['regions'].append({'name': r.name, 'poke_id': r.poke_id})
+    return response
 
+
+def get_locations(region_poke_id):
+    locations = Location.objects.filter(region__poke_id=region_poke_id)
+    response = {'locations': []}
+    for l in locations:
+        response['locations'].append({'name': l.name, 'poke_id': l.poke_id})
     return response
 
 
 def test():
+    regions = Region.objects.all()
+    print(regions)
     return get_pokemon()
-    
