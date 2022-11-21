@@ -16,3 +16,8 @@ def test(request):
 @api_view(['GET'])
 def regions(request):
     return Response(pokeapi.get_regions())
+
+
+@api_view(['GET'])
+def locations(request, region_poke_id):
+    return Response(pokeapi.get_locations(region_poke_id))
