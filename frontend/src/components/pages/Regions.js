@@ -33,10 +33,10 @@ export default function Regions() {
         Regions
       </Typography>
       <Grid container rowSpacing={2} columnSpacing={2}>
-        {data.regions.map(({ name: name, poke_id: poke_id }) => (
-          <Grid item key={poke_id}>
+        {data.regions.map(({ name: name, poke_id: region_id }) => (
+          <Grid item key={region_id}>
             <Card sx={{ height: "100%", width: 400 }}>
-              <CardActionArea onClick={() => navigate(`location/${poke_id}`)}>
+              <CardActionArea onClick={() => navigate(`${name}/${region_id}`)}>
                 <CardContent sx={{ marginLeft: "auto", marginRight: "auto" }}>
                   <Typography
                     variant="h4"

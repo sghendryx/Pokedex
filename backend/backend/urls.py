@@ -19,8 +19,9 @@ from pokeapi import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('pokemon/', views.get_pokemon),
     path('test/', views.test),
     path('regions/', views.regions),
-    path('locations/<int:region_poke_id>/', views.locations)
+    path('locations/<int:region_poke_id>/', views.locations),
+    path('areas/<int:location_poke_id>/', views.areas),
+    path('pokemon/<int:area_poke_id>', views.get_pokemon),
 ]

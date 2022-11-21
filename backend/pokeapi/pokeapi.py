@@ -6,8 +6,8 @@ from pokeapi.models import Region, Location, Area
 # that will be useful to see in the UI.
 
 # Adds Pokemon you encounter's URLs in a location_area to the empty array pokemon_urls 
-def pokemon_route_encounters():
-    response = requests.get("https://pokeapi.co/api/v2/location-area/kanto-route-28-area/")
+def pokemon_route_encounters(area_id):
+    response = requests.get(f'https://pokeapi.co/api/v2/location-area/{area_id}/')
     area = response.json()
     encounters = area['pokemon_encounters']
     pokemon_names = []
@@ -19,8 +19,8 @@ def pokemon_route_encounters():
 
 
 # Gets a Pokemon's name, its sprite, and its types from the Pokemons in the specified location area.
-def get_pokemon():
-    pokemon_names = pokemon_route_encounters()
+def get_pokemon(area_id):
+    pokemon_names = pokemon_route_encounters(area_id)
     hydrated_pokemon = []
     for name in pokemon_names:
         response = requests.get(f'https://pokeapi.co/api/v2/pokemon/{name}')
@@ -45,6 +45,14 @@ def get_locations(region_poke_id):
     response = {'locations': []}
     for l in locations:
         response['locations'].append({'name': l.name, 'poke_id': l.poke_id})
+    return response
+
+
+def get_areas(location_poke_id):
+    areas = Area.objects.filter(location__poke_id=location_poke_id)
+    response = {'areas': []}
+    for a in areas:
+        response['areas'].append({'name': a.name, 'poke_id': a.poke_id})
     return response
 
 
