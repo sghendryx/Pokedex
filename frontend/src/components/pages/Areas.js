@@ -10,14 +10,14 @@ import AlertTitle from "@mui/material/AlertTitle";
 import { useQuery } from "react-query";
 import { useNavigate, useParams } from "react-router-dom";
 
-export default function Locations() {
-  const { region_id, region_name } = useParams();
-  const navigate = useNavigate();
-  const { isLoading, error, data } = useQuery(`get${region_id}Locations`, () =>
-    fetch(`http://127.0.0.1:8000/locations/${region_id}/`).then((res) =>
+export default function Areas() {
+  const { location_id, location_name } = useParams();
+  const { isLoading, error, data } = useQuery(`get${location_id}Areas`, () =>
+    fetch(`http://127.0.0.1:8000/areas/${location_id}/`).then((res) =>
       res.json()
     )
   );
+  const navigate = useNavigate();
 
   if (isLoading) {
     return <CircularProgress />;
@@ -33,15 +33,13 @@ export default function Locations() {
   return (
     <>
       <Typography variant="h3" mb={4} sx={{ textTransform: "capitalize" }}>
-        {region_name} locations
+        {location_name} areas
       </Typography>
       <Grid container rowSpacing={2} columnSpacing={2}>
-        {data.locations.map(({ name: name, poke_id: location_id }) => (
-          <Grid item key={location_id}>
+        {data.areas.map(({ name: name, poke_id: poke_id }) => (
+          <Grid item key={poke_id}>
             <Card sx={{ height: "100%", width: 350 }}>
-              <CardActionArea
-                onClick={() => navigate(`${name}/${location_id}`)}
-              >
+              <CardActionArea onClick={() => navigate(`${name}/${poke_id}`)}>
                 <CardContent sx={{ marginLeft: "auto", marginRight: "auto" }}>
                   <Typography
                     variant="h5"
