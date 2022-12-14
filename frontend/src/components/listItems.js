@@ -22,12 +22,15 @@ export function MainListItems() {
 }
 
 export function SecondaryListItems() {
+  const navigate = useNavigate();
   return (
     <React.Fragment>
       <ListSubheader component="div" inset>
         Set Team
       </ListSubheader>
-      <ListItemButton>
+      <ListItemButton
+        onClick={() => navigate("/create-team", { replace: true })}
+      >
         <ListItemIcon>
           <AssignmentIcon />
         </ListItemIcon>
